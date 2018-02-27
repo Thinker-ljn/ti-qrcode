@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head>
+<body>
+    <div style="margin-bottom: 10px;">
+        <input type="text" placeholder="输入并回车生成" id="input">
+    </div>
+    <div class="preview">
+        <canvas id="canvas"></canvas>
+        <span>000</span>
+    </div>
+    <!-- <div class="preview">
+        <canvas id="canvas-000"></canvas>
+        <span>000</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-001"></canvas>
+        <span>001</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-010"></canvas>
+        <span>010</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-011"></canvas>
+        <span>011</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-100"></canvas>
+        <span>100</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-101"></canvas>
+        <span>101</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-110"></canvas>
+        <span>110</span>
+    </div>
+    <div class="preview">
+        <canvas id="canvas-111"></canvas>
+        <span>111</span>
+    </div> -->
+</body>
+<script src="./dist/index.js"></script>
+<!-- <script src="http://localhost:3000/index.js"></script> -->
+<script>
+document.querySelector('#input').addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        let input = e.target.value
+        const qrcode = new QRCode({
+          data: e.target.value,
+          container: 'canvas',
+          ecl: 'H'
+        })
+
+        qrcode.generate()
+    }
+})
+
+
+</script>
+</html>
